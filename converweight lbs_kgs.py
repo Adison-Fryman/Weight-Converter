@@ -1,5 +1,6 @@
 
-weight=input('Please enter your weight in in either lbs(pounds) or kgs(killograms): ')
+user_weight=input('Please enter your weight in in either lbs(pounds) or kgs(killograms): ')
+weight = user_weight.lower()
 if weight.find('kgs')!=-1:
     weight_int=weight.replace('kgs','')
     weight_in_lbs =  float(weight_int)/.453592
