@@ -1,14 +1,14 @@
 import time
 user_weight = input('Please enter your weight in in either lbs(pounds) or kgs(kilograms): ')
 weight = user_weight.lower()
+#find if kgs or lbs is specified, then turn input into float for conversion
 if weight.find('kgs') != -1:
-    weight_int = weight.replace('kgs', '')
-    weight_in_lbs = float(weight_int)/.453592
-    print(f"Your weight is ({round(weight_in_lbs,2)})lbs")
+    weight_int = float(weight.replace('kgs', ''))/.453592
+    print(f"Your weight is ({round(weight_int,2)})lbs")
 elif weight.find('lbs') != -1:
-    weight_int = weight.replace('lbs', '')
-    weight_in_kgs = float(weight_int) * .453592
-    print(f"Your weight is ({round(weight_in_kgs,2)})kgs")
+    weight_int = float(weight.replace('lbs', '')) * .453592
+    print(f"Your weight is ({round(weight_int,2)})kgs")
+#If units not specified, return print note with both options.
 else:
     weight_int = weight.replace('kgs', '') or weight.replace('lbs', '')
     weight_in_lbs = float(weight_int) / .453592
